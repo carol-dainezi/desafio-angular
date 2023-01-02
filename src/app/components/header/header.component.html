@@ -1,44 +1,38 @@
 <nav>
   <h1>Desafio Angular</h1>
   <ul class="menu">
-    <li>
-      <span><a routerLink="/">Home</a></span>
-    </li>
-    <li>
-      <span><a routerLink="/about">Sobre</a></span>
-    </li>
-    <li>
-      <div class="dropdown">
-        <span>Funcionários</span>
-        <div class="dropdown-content">
-          <li><a routerLink="/funcionarios">Lista de Funcionários</a></li>
-          <li><a routerLink="/funcionarios/new">Novo Funcionário</a></li>
-        </div>
-      </div>
-    </li>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/about">Sobre</a></li>
     <div class="dropdown">
-      <li><span>Cardápio</span></li>
+      <li>Funcionários</li>
       <div class="dropdown-content">
-        <li><a routerLink="/cardapio/comidas">Comidas</a></li>
-        <li><a routerLink="/cardapio/comidas/new">Nova Comida</a></li>
-        <li><a routerLink="/cardapio/bebidas">Bebidas</a></li>
-        <li><a routerLink="/cardapio/bebidas/new">Nova Bebida</a></li>
+        <a routerLink="/funcionarios">Lista de Funcionários</a>
+        <a routerLink="/funcionarios/new">Novo Funcionário</a>
       </div>
     </div>
     <div class="dropdown">
-      <li><span>Eventos</span></li>
+      <li>Cardápio</li>
       <div class="dropdown-content">
-        <li><a routerLink="/eventos">Lista de Eventos</a></li>
-        <li><a routerLink="/eventos/new">Novo Evento</a></li>
-        <li><a routerLink="/agendamentos">Agendamentos</a></li>
-        <li><a routerLink="/agendamentos/new">Novo Agendamento</a></li>
+        <a routerLink="/cardapio/comidas">Comidas</a>
+        <a routerLink="/cardapio/comidas/new">Nova Comida</a>
+        <a routerLink="/cardapio/bebidas">Bebidas</a>
+        <a routerLink="/cardapio/bebidas/new">Nova Bebida</a>
       </div>
     </div>
     <div class="dropdown">
-      <li><span>Fornecedores</span></li>
+      <li>Eventos</li>
       <div class="dropdown-content">
-        <li><a routerLink="/fornecedores">Lista de Fornecedores</a></li>
-        <li><a routerLink="/fornecedores/new">Novo Fornecedor</a></li>
+        <a routerLink="/eventos">Lista de Eventos</a>
+        <a routerLink="/eventos/new">Novo Evento</a>
+        <a routerLink="/agendamentos">Agendamentos</a>
+        <a routerLink="/agendamentos/new">Novo Agendamento</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <li>Fornecedores</li>
+      <div class="dropdown-content">
+        <a routerLink="/fornecedores">Lista de Fornecedores</a>
+        <a routerLink="/fornecedores/new">Novo Fornecedor</a>
       </div>
     </div>
   </ul>

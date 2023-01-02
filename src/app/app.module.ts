@@ -21,6 +21,7 @@ import { CadastroComponent } from './components/forms/cadastro/cadastro.componen
 import { NovaBebidaComponent } from './pages/nova-bebida/nova-bebida.component';
 import { ComidaFormComponent } from './components/forms/comida-form/comida-form.component';
 import { EventoFormComponent } from './components/forms/evento-form/evento-form.component';
+import { FuncionarioFormComponent } from './components/forms/funcionario-form/funcionario-form.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { EventoFormComponent } from './components/forms/evento-form/evento-form.
     NovaBebidaComponent,
     ComidaFormComponent,
     EventoFormComponent,
+    FuncionarioFormComponent,
   ],
   imports: [
     BrowserModule,
