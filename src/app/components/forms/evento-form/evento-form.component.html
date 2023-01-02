@@ -1,0 +1,64 @@
+<form (ngSubmit)="submit()" [formGroup]="eventoForm" #formDir="ngForm">
+  <div>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" formControlName="nome" required />
+  </div>
+  <div *ngIf="nome.invalid && formDir.submitted">
+    <p *ngIf="nome.errors?.['required']">Preencha o nome do evento.</p>
+  </div>
+  <div>
+    <label for="foto">URL da Foto:</label>
+    <input type="url" id="foto" formControlName="foto" required />
+  </div>
+  <div *ngIf="foto.invalid && formDir.submitted">
+    <p *ngIf="foto.errors?.['required']">Preencha a imagem do evento.</p>
+  </div>
+  <div>
+    <label for="descricao">Descrição:</label>
+    <textarea id="descricao" formControlName="descricao" required></textarea>
+  </div>
+  <div *ngIf="descricao.invalid && formDir.submitted">
+    <p *ngIf="descricao.errors?.['required']">
+      Preencha a descrição do evento.
+    </p>
+  </div>
+  <div>
+    <label for="data-inicio">Data de Início:</label>
+    <input
+      type="date"
+      id="data-inicio"
+      formControlName="dataInicio"
+      required
+    />
+  </div>
+  <div *ngIf="dataInicio.invalid && formDir.submitted">
+    <p *ngIf="dataInicio.errors?.['required']">Preencha a data inicial.</p>
+  </div>
+  <div>
+    <label for="data-fim">Data de Fim:</label>
+    <input
+      type="date"
+      id="data-fim"
+      formControlName="dataFim"
+      required
+    />
+  </div>
+  <div *ngIf="dataFim.invalid && formDir.submitted">
+    <p *ngIf="dataFim.errors?.['required']">Preencha a data final.</p>
+  </div>
+  <div>
+    <label for="hora-inicio">Hora de Início:</label>
+    <input type="time" id="hora-inicio" formControlName="horaInicio" required />
+  </div>
+  <div *ngIf="horaInicio.invalid && formDir.submitted">
+    <p *ngIf="horaInicio.errors?.['required']">Preencha a hora inicial.</p>
+  </div>
+  <div>
+    <label for="hora-fim">Hora de Fim:</label>
+    <input type="time" id="hora-fim" formControlName="horaFim" required />
+  </div>
+  <div *ngIf="horaFim.invalid && formDir.submitted">
+    <p *ngIf="horaFim.errors?.['required']">Preencha a hora final.</p>
+  </div>
+  <input type="submit" />
+</form>
