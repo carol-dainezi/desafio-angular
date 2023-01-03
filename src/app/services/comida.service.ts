@@ -13,7 +13,6 @@ export class ComidaService {
   private apiUrl = `${this.baseApiUrl}/comidas`;
 
   salvarComida(comida: Comida): Observable<Comida> {
-    console.log(comida);
     return this.http.post<Comida>(this.apiUrl, comida);
   }
   constructor(private http: HttpClient) {}

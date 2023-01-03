@@ -22,6 +22,8 @@ import { NovaBebidaComponent } from './pages/nova-bebida/nova-bebida.component';
 import { ComidaFormComponent } from './components/forms/comida-form/comida-form.component';
 import { EventoFormComponent } from './components/forms/evento-form/evento-form.component';
 import { FuncionarioFormComponent } from './components/forms/funcionario-form/funcionario-form.component';
+import { FornecedorFormComponent } from './components/forms/fornecedor-form/fornecedor-form.component';
+import { BebidasComponent } from './components/pages/bebidas/bebidas.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { FuncionarioFormComponent } from './components/forms/funcionario-form/fu
     ComidaFormComponent,
     EventoFormComponent,
     FuncionarioFormComponent,
+    FornecedorFormComponent,
+    BebidasComponent,
   ],
   imports: [
     BrowserModule,

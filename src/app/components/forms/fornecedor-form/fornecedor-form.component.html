@@ -1,0 +1,30 @@
+<div class="form-card">
+  <form (ngSubmit)="submit()" [formGroup]="fornecedorForm" #formDir="ngForm">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" formControlName="nome" required />
+    </div>
+    <div class="error-message" *ngIf="nome.invalid && formDir.submitted">
+      <p *ngIf="nome.errors?.['required']">Preencha o nome do fornecedor.</p>
+    </div>
+    <div class="form-group">
+      <label for="foto">URL da Foto:</label>
+      <input type="url" formControlName="foto" required />
+    </div>
+    <div class="error-message" *ngIf="foto.invalid && formDir.submitted">
+      <p *ngIf="foto.errors?.['required']">O fornecedor precisa de uma foto.</p>
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" formControlName="descricao" required></textarea>
+    </div>
+    <div class="error-message" *ngIf="descricao.invalid && formDir.submitted">
+      <p *ngIf="descricao.errors?.['required']">
+        Preencha a descrição do fornecedor.
+      </p>
+    </div>
+    <div class="button">
+      <button type="submit">Cadastrar Fornecedor</button>
+    </div>
+  </form>
+</div>

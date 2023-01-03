@@ -15,5 +15,10 @@ export class BebidaService {
   salvarBebida(bebida: Bebida): Observable<Bebida> {
     return this.http.post<Bebida>(this.apiUrl, bebida);
   }
+
+  listarBebidas(): Observable<Bebida[]> {
+    return this.http.get<Bebida[]>(this.apiUrl);
+  }
+
   constructor(private http: HttpClient) {}
 }

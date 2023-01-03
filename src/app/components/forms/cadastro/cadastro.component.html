@@ -1,25 +1,32 @@
 <h1>Cadastre-se</h1>
-<form>
-  <p>
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" required />
-  </p>
-  <p>
-    <label for="cpf">CPF:</label>
-    <input type="number" id="cpf" required />
-  </p>
-  <p>
-    <label for="telefone">Telefone:</label>
-    <input type="number" id="telefone" required />
-  </p>
-  <p>
-    <label for="email">Email:</label>
-    <input type="email" id="email" required />
-  </p>
-  <p>
-    <label for="senha">Senha:</label>
-    <input type="password" id="senha" required />
-  </p>
-  <p><input type="checkbox" />Mostrar senha</p>
-  <input type="submit" value="Cadastrar-se" />
-</form>
+<div class="form-card">
+  <form>
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" required />
+    </div>
+    <div class="form-group">
+      <label for="cpf">CPF:</label>
+      <input type="number" id="cpf" required />
+    </div>
+    <div class="form-group">
+      <label for="telefone">Telefone:</label>
+      <input type="number" id="telefone" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+    </div>
+    <div class="form-group">
+      <label for="senha">Senha:</label>
+      <input [type]="visibilidade ? 'text' : 'password'" id="senha" required />
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="mostrar-senha" (click)="mostrarSenha()" />
+      <label for="mostrar-senha">Mostrar senha</label>
+    </div>
+    <div class="button">
+      <button type="submit">Cadastrar-se</button>
+    </div>
+  </form>
+</div>

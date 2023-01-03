@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
@@ -9,7 +10,7 @@ a {
 }
 
 .form-card {
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
   width: 30%;
@@ -18,18 +19,30 @@ a {
 }
 
 .form-group {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
   font-size: 18px;
   padding: 0.5rem;
   margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .form-group input,
 .form-group textarea {
-  margin-left: 0.5rem;
+  font-size: 16px;
+  width: 100%;
   padding: 0.3rem;
   border: 1px solid black;
   border-radius: 3px;
+}
+
+.form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.form-group textarea {
+  min-width: 100%;
+  max-width: 100%;
 }
 
 .form-group label:hover {
@@ -50,11 +63,11 @@ textarea:focus {
 }
 
 .error-message {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 600;
   font-size: 14px;
   color: rgb(255, 50, 50);
-  margin-left: 2rem;
+  margin-left: 2.5rem;
+  margin-bottom: 3px;
 }
 
 .form-card button[type="submit"] {
@@ -67,7 +80,7 @@ textarea:focus {
 
 button {
   margin-right: 2rem;
-  background-color: white;
+  background-color: transparent;
   border: 1px solid black;
   padding: 0.7rem;
   border-radius: 5px;
@@ -76,6 +89,19 @@ button {
 button:hover {
   transition: 0.3s;
   background-color: rgb(236, 236, 236);
-  border: 1px solid rgb(95, 95, 95);
+  border: 1px solid rgb(24, 180, 180);
+  color: rgb(24, 180, 180);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 2rem;
   color: rgb(95, 95, 95);
+}
+
+h2 {
+  color: rgb(24, 180, 180);
+  font-size: 48px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }

@@ -11,6 +11,7 @@ import { NovoFuncionarioComponent } from './pages/novo-funcionario/novo-funciona
 import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NovaBebidaComponent } from './pages/nova-bebida/nova-bebida.component';
+import { BebidasComponent } from './components/pages/bebidas/bebidas.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'eventos/new', component: NovoEventoComponent },
   { path: 'cardapio/comidas/new', component: NovaComidaComponent },
   { path: 'cardapio/bebidas/new', component: NovaBebidaComponent },
+  { path: 'cardapio/bebidas', component: BebidasComponent },
   { path: 'agendamentos/new', component: NovoAgendamentoComponent },
   { path: 'fornecedores/new', component: NovoFornecedorComponent },
   { path: 'login', component: LoginComponent },

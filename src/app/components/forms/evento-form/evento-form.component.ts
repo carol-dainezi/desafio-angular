@@ -59,6 +59,7 @@ export class EventoFormComponent {
 
   ngOnInit() {
     this.eventoForm = new FormGroup({
+      id: new FormControl(''),
       nome: new FormControl('', [Validators.required]),
       foto: new FormControl('', [Validators.required]),
       descricao: new FormControl('', [Validators.required]),

@@ -11,9 +11,8 @@ export class EventoService {
   private baseApiUrl = environment.baseApiUrl;
   private apiUrl = `${this.baseApiUrl}/eventos`;
 
-  salvarEvento(evento: Evento): Observable<any> {
-    console.log(evento);
-    return this.http.post<any>(this.apiUrl, evento);
+  salvarEvento(evento: Evento): Observable<Evento> {
+    return this.http.post<Evento>(this.apiUrl, evento);
   }
 
   constructor(private http: HttpClient) {}

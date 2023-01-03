@@ -1,16 +1,2 @@
 <h1>Novo Fornecedor</h1>
-<form>
-  <p>
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" required />
-  </p>
-  <p>
-    <label for="foto">URL da Foto:</label>
-    <input type="url" />
-  </p>
-  <p>
-    <label for="descricao">Descrição:</label>
-    <textarea id="descricao" required></textarea>
-  </p>
-  <input type="submit" />
-</form>
+<app-fornecedor-form (onSubmit)="enviar($event)"></app-fornecedor-form>

@@ -1,28 +1,28 @@
 <div class="form-card">
   <form (ngSubmit)="submit()" [formGroup]="bebidaForm" #formDir="ngForm">
     <div class="form-group">
-      <label for="nome">Nome:</label>
+      <label for="nome">Nome</label><br />
       <input type="text" id="nome" formControlName="nome" required />
     </div>
     <div class="error-message" *ngIf="nome.invalid && formDir.submitted">
       <p *ngIf="nome.errors?.['required']">Preencha o nome da bebida.</p>
     </div>
     <div class="form-group">
-      <label for="foto">URL da Foto:</label>
+      <label for="foto">URL da Foto</label><br />
       <input type="url" id="foto" formControlName="foto" required />
     </div>
     <div class="error-message" *ngIf="foto.invalid && formDir.submitted">
-      <p *ngIf="foto.errors?.['required']">Insira uma foto para a bebida.</p>
+      <p *ngIf="foto.errors?.['required']">A bebida precisa de uma foto.</p>
     </div>
     <div class="form-group">
-      <label for="preco">Preço:</label>
+      <label for="preco">Preço</label><br />
       <input type="number" id="preco" formControlName="preco" required />
     </div>
     <div class="error-message" *ngIf="preco.invalid && formDir.submitted">
       <p *ngIf="preco.errors?.['required']">Preencha o preço da bebida.</p>
     </div>
     <div class="form-group">
-      <label for="descricao">Descrição:</label>
+      <label for="descricao">Descrição</label><br />
       <textarea id="descricao" formControlName="descricao" required></textarea>
     </div>
     <div class="error-message" *ngIf="descricao.invalid && formDir.submitted">

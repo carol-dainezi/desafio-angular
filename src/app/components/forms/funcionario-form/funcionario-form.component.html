@@ -1,32 +1,83 @@
 <div class="form-card">
-  <form>
+  <form (ngSubmit)="submit()" [formGroup]="funcionarioForm" #formDir="ngForm">
     <div class="form-group">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" placeholder="Nome completo" required />
+      <label for="nome">Nome</label><br />
+      <input type="text" id="nome" formControlName="nome" required />
+    </div>
+    <div class="error-message" *ngIf="nome.invalid && formDir.submitted">
+      <p *ngIf="nome.errors?.['required']">Preencha o nome do funcionário.</p>
     </div>
     <div class="form-group">
-      <label for="foto-perfil">URL da Foto:</label>
-      <input type="url" id="foto-perfil" />
+      <label for="foto-perfil">URL da Foto</label><br />
+      <input type="url" id="foto-perfil" formControlName="foto" required />
+    </div>
+    <div class="error-message" *ngIf="foto.invalid && formDir.submitted">
+      <p *ngIf="foto.errors?.['required']">
+        O funcionário precisa de uma foto.
+      </p>
     </div>
     <div class="form-group">
-      <label for="idade">Idade:</label>
-      <input type="number" id="idade" required />
+      <label for="idade">Idade</label><br />
+      <input
+        type="number"
+        id="idade"
+        formControlName="idade"
+        min="14"
+        max="120"
+        required
+      />
+    </div>
+    <div class="error-message" *ngIf="idade.invalid && formDir.submitted">
+      <p *ngIf="idade.errors?.['required']">Preencha a idade do funcionário.</p>
     </div>
     <div class="form-group">
-      <label for="cargo">Cargo:</label>
-      <input type="text" id="cargo" required />
+      <label for="cargo">Cargo</label><br />
+      <input type="text" id="cargo" formControlName="cargo" required />
+    </div>
+    <div class="error-message" *ngIf="cargo.invalid && formDir.submitted">
+      <p *ngIf="cargo.errors?.['required']">Preencha o cargo do funcionário.</p>
     </div>
     <div class="form-group">
-      <label for="naturalidade">Naturalidade:</label>
-      <input type="text" id="naturalidade" required />
+      <label for="naturalidade">Naturalidade</label><br />
+      <input
+        type="text"
+        id="naturalidade"
+        formControlName="naturalidade"
+        required
+      />
+    </div>
+    <div
+      class="error-message"
+      *ngIf="naturalidade.invalid && formDir.submitted"
+    >
+      <p *ngIf="naturalidade.errors?.['required']">
+        Preencha a naturalidade do funcionário.
+      </p>
     </div>
     <div class="form-group">
-      <label for="admissao">Ano de admissão:</label>
-      <input type="number" id="admissao" required />
+      <label for="admissao">Ano de admissão</label><br />
+      <input
+        type="number"
+        id="admissao"
+        min="1916"
+        max="2030"
+        formControlName="anoAdmissao"
+        required
+      />
+    </div>
+    <div class="error-message" *ngIf="anoAdmissao.invalid && formDir.submitted">
+      <p *ngIf="anoAdmissao.errors?.['required']">
+        Preencha o ano de admissão.
+      </p>
     </div>
     <div class="form-group">
-      <label for="hobbie">Hobbie:</label>
-      <textarea id="hobbie" required></textarea>
+      <label for="hobbie">Hobbie</label><br />
+      <textarea id="hobbie" formControlName="hobbie" required></textarea>
+    </div>
+    <div class="error-message" *ngIf="hobbie.invalid && formDir.submitted">
+      <p *ngIf="hobbie.errors?.['required']">
+        Preencha o hobbie do funcionário.
+      </p>
     </div>
     <div class="button">
       <button type="submit">Cadastrar Funcionário</button>
