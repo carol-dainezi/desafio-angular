@@ -1,0 +1,12 @@
+<h1>Fornecedores</h1>
+<div class="cards">
+  <div class="card" *ngFor="let fornecedor of fornecedores">
+    <h3>{{ fornecedor.nome }}</h3>
+    <div class="image">
+      <img src="{{ fornecedor.foto }}" />
+    </div>
+    <p>{{ fornecedor.descricao }}</p>
+    <button>Editar</button>
+    <button>Excluir</button>
+  </div>
+</div>

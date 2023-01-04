@@ -15,5 +15,9 @@ export class FuncionarioService {
     return this.http.post<Funcionario>(this.apiUrl, funcionario);
   }
 
+  listarFuncionarios(): Observable<Funcionario[]> {
+    return this.http.get<Funcionario[]>(this.apiUrl);
+  }
+
   constructor(private http: HttpClient) {}
 }

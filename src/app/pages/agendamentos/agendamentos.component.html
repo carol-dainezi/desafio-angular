@@ -1,0 +1,11 @@
+<h1>Agendamentos</h1>
+<div class="cards">
+  <div class="card" *ngFor="let agendamento of agendamentos">
+    <p id="highlight">Usuário: {{ agendamento.nomeUsuario }}</p>
+    <p id="highlight">Evento: {{ agendamento.nomeEvento }}</p>
+    <p>Data: {{ agendamento.data | date : "dd/MM/yyyy" }}</p>
+    <p>Hora: {{ agendamento.hora }}</p>
+    <button>Editar</button>
+    <button>Excluir</button>
+  </div>
+</div>

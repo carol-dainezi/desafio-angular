@@ -15,5 +15,9 @@ export class FornecedorService {
     return this.http.post<Fornecedor>(this.apiUrl, fornecedor);
   }
 
+  listarFornecedores(): Observable<Fornecedor[]> {
+    return this.http.get<Fornecedor[]>(this.apiUrl);
+  }
+
   constructor(private http: HttpClient) {}
 }

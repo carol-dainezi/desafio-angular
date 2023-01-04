@@ -1,10 +1,10 @@
 export interface Evento {
-  id?: string;
+  _id?: string;
   nome: string;
   foto: string;
   descricao: string;
-  dataInicio: string;
-  dataFim: string;
+  dataInicio: Date;
+  dataFim: Date;
   horaInicio: string;
   horaFim: string;
 }

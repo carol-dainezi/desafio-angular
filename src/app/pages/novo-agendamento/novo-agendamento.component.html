@@ -1,24 +1,2 @@
 <h1>Novo Agendamento</h1>
-<form>
-  <p>
-    <label for="usuario">Usuário:</label>
-    <select id="usuario">
-      <option></option>
-    </select>
-  </p>
-  <p>
-    <label for="evento">Evento:</label>
-    <select>
-      <option></option>
-    </select>
-  </p>
-  <p>
-    <label for="data">Data:</label>
-    <input type="date" id="data" required />
-  </p>
-  <p>
-    <label for="hora">Horário:</label>
-    <input type="time" id="hora" required />
-  </p>
-  <input type="submit" />
-</form>
+<app-agendamento-form (onSubmit)="enviar($event)"></app-agendamento-form>

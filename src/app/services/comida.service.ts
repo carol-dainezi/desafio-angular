@@ -15,5 +15,10 @@ export class ComidaService {
   salvarComida(comida: Comida): Observable<Comida> {
     return this.http.post<Comida>(this.apiUrl, comida);
   }
+
+  listarComidas(): Observable<Comida[]> {
+    return this.http.get<Comida[]>(this.apiUrl);
+  }
+
   constructor(private http: HttpClient) {}
 }

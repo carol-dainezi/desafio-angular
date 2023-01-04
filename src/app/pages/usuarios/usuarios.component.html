@@ -1,0 +1,11 @@
+<h1>Usuários</h1>
+<div class="cards">
+  <div class="card" *ngFor="let usuario of usuarios">
+    <h3>{{ usuario.nome }}</h3>
+    <p id="highlight">CPF: {{ usuario.cpf }}</p>
+    <p>Telefone: {{ usuario.telefone }}</p>
+    <p>Email: {{ usuario.email }}</p>
+    <button>Editar</button>
+    <button>Excluir</button>
+  </div>
+</div>

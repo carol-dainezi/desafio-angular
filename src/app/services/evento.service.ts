@@ -15,5 +15,9 @@ export class EventoService {
     return this.http.post<Evento>(this.apiUrl, evento);
   }
 
+  listarEventos(): Observable<Evento[]> {
+    return this.http.get<Evento[]>(this.apiUrl);
+  }
+
   constructor(private http: HttpClient) {}
 }

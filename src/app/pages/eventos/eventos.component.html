@@ -1,0 +1,17 @@
+<h1>Eventos</h1>
+<div class="cards">
+  <div class="card" *ngFor="let evento of eventos">
+    <h3>{{ evento.nome }}</h3>
+    <div class="image">
+      <img src="{{ evento.foto }}" />
+    </div>
+    <p id="highlight">
+      {{ evento.dataInicio | date : "dd/MM/yyyy" }} até
+      {{ evento.dataFim | date : "dd/MM/yyyy" }}
+    </p>
+    <p>Das {{ evento.horaInicio }} às {{ evento.horaFim }}</p>
+    <p>{{ evento.descricao }}</p>
+    <button>Editar</button>
+    <button>Excluir</button>
+  </div>
+</div>

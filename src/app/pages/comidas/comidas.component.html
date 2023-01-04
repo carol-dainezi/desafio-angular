@@ -1,0 +1,13 @@
+<h1>Comidas</h1>
+<div class="cards">
+  <div class="card" *ngFor="let comida of comidas">
+    <h3>{{ comida.nome }}</h3>
+    <div class="image">
+      <img src="{{ comida.foto }}" />
+    </div>
+    <p id="highlight">{{ comida.preco | currency : "BRL" }}</p>
+    <p>{{ comida.descricao }}</p>
+    <button>Editar</button>
+    <button>Excluir</button>
+  </div>
+</div>

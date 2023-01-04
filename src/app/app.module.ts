@@ -23,7 +23,15 @@ import { ComidaFormComponent } from './components/forms/comida-form/comida-form.
 import { EventoFormComponent } from './components/forms/evento-form/evento-form.component';
 import { FuncionarioFormComponent } from './components/forms/funcionario-form/funcionario-form.component';
 import { FornecedorFormComponent } from './components/forms/fornecedor-form/fornecedor-form.component';
-import { BebidasComponent } from './components/pages/bebidas/bebidas.component';
+import { BebidasComponent } from './pages/bebidas/bebidas.component';
+import { ComidasComponent } from './pages/comidas/comidas.component';
+import { FuncionariosComponent } from './pages/funcionarios/funcionarios.component';
+import { EventosComponent } from './pages/eventos/eventos.component';
+import { FornecedoresComponent } from './pages/fornecedores/fornecedores.component';
+import { NovoUsuarioComponent } from './pages/novo-usuario/novo-usuario.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { AgendamentoFormComponent } from './components/forms/agendamento-form/agendamento-form.component';
+import { AgendamentosComponent } from './pages/agendamentos/agendamentos.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +54,14 @@ import { BebidasComponent } from './components/pages/bebidas/bebidas.component';
     FuncionarioFormComponent,
     FornecedorFormComponent,
     BebidasComponent,
+    ComidasComponent,
+    FuncionariosComponent,
+    EventosComponent,
+    FornecedoresComponent,
+    NovoUsuarioComponent,
+    UsuariosComponent,
+    AgendamentoFormComponent,
+    AgendamentosComponent,
   ],
   imports: [
     BrowserModule,

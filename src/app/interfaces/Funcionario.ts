@@ -5,6 +5,6 @@ export interface Funcionario {
   idade: number;
   cargo: string;
   naturalidade: string;
-  admissao: number;
+  anoAdmissao: number;
   hobbie: string;
 }

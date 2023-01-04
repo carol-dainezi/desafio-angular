@@ -1,25 +1,51 @@
-<h1>Cadastre-se</h1>
 <div class="form-card">
-  <form>
+  <form (ngSubmit)="submit()" [formGroup]="usuarioForm" #formDir="ngForm">
     <div class="form-group">
       <label for="nome">Nome:</label>
-      <input type="text" id="nome" required />
+      <input type="text" id="nome" formControlName="nome" required />
+    </div>
+    <div class="error-message" *ngIf="nome.invalid && formDir.submitted">
+      <p *ngIf="nome.errors?.['required']">Preencha o nome.</p>
     </div>
     <div class="form-group">
       <label for="cpf">CPF:</label>
-      <input type="number" id="cpf" required />
+      <input
+        type="number"
+        id="cpf"
+        minlength="11"
+        maxlength="11"
+        formControlName="cpf"
+        required
+      />
+    </div>
+    <div class="error-message" *ngIf="cpf.invalid && formDir.submitted">
+      <p *ngIf="cpf.errors?.['required']">Preencha o CPF.</p>
     </div>
     <div class="form-group">
       <label for="telefone">Telefone:</label>
-      <input type="number" id="telefone" required />
+      <input type="number" id="telefone" formControlName="telefone" required />
+    </div>
+    <div class="error-message" *ngIf="telefone.invalid && formDir.submitted">
+      <p *ngIf="telefone.errors?.['required']">Preencha o telefone.</p>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" id="email" required />
+      <input type="email" id="email" formControlName="email" required />
+    </div>
+    <div class="error-message" *ngIf="email.invalid && formDir.submitted">
+      <p *ngIf="email.errors?.['required']">Preencha o email.</p>
     </div>
     <div class="form-group">
       <label for="senha">Senha:</label>
-      <input [type]="visibilidade ? 'text' : 'password'" id="senha" required />
+      <input
+        [type]="visibilidade ? 'text' : 'password'"
+        id="senha"
+        formControlName="senha"
+        required
+      />
+    </div>
+    <div class="error-message" *ngIf="senha.invalid && formDir.submitted">
+      <p *ngIf="senha.errors?.['required']">A senha não pode ser vazia.</p>
     </div>
     <div class="form-group">
       <input type="checkbox" id="mostrar-senha" (click)="mostrarSenha()" />
