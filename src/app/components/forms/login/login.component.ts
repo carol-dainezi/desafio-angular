@@ -26,7 +26,7 @@ export class LoginComponent {
 
     this.loginService.fazerLogin(this.login).subscribe();
 
-    this.router.navigate('/');
+    this.router.navigate(['/']);
   }
 
   mostrarSenha() {
