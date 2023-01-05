@@ -10,11 +10,17 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 export class FuncionariosComponent {
   funcionarios: Funcionario[] = [];
 
+  async excluir(_id: string) {
+    await this.funcionarioService.excluirFuncionario(_id).subscribe();
+
+    window.location.reload();
+  }
+
   constructor(private funcionarioService: FuncionarioService) {}
 
   ngOnInit() {
     this.funcionarioService.listarFuncionarios().subscribe((items) => {
-      console.log(items)
+      console.log(items);
       this.funcionarios = items;
     });
   }

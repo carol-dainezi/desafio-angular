@@ -20,5 +20,23 @@ export class BebidaService {
     return this.http.get<Bebida[]>(this.apiUrl);
   }
 
+  buscarBebida(_id: string): Observable<Bebida> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.get<Bebida>(url);
+  }
+
+  excluirBebida(_id: string) {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.delete<Bebida>(url);
+  }
+
+  editarBebida(_id: string, bebida: Bebida): Observable<Bebida> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.put<Bebida>(url, bebida);
+  }
+
   constructor(private http: HttpClient) {}
 }

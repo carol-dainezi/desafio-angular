@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Bebida } from 'src/app/interfaces/Bebida';
@@ -10,6 +10,8 @@ import { Bebida } from 'src/app/interfaces/Bebida';
 })
 export class BebidaFormComponent {
   @Output() onSubmit = new EventEmitter<Bebida>();
+
+  @Input() dadosBebida: Bebida | null = null;
 
   bebidaForm!: FormGroup;
 
@@ -39,10 +41,20 @@ export class BebidaFormComponent {
 
   ngOnInit(): void {
     this.bebidaForm = new FormGroup({
-      nome: new FormControl('', [Validators.required]),
-      foto: new FormControl('', [Validators.required]),
-      descricao: new FormControl('', [Validators.required]),
-      preco: new FormControl('', [Validators.required]),
+      _id: new FormControl(this.dadosBebida ? this.dadosBebida._id : ''),
+      nome: new FormControl(this.dadosBebida ? this.dadosBebida.nome : '', [
+        Validators.required,
+      ]),
+      foto: new FormControl(this.dadosBebida ? this.dadosBebida.foto : '', [
+        Validators.required,
+      ]),
+      descricao: new FormControl(
+        this.dadosBebida ? this.dadosBebida.descricao : '',
+        [Validators.required]
+      ),
+      preco: new FormControl(this.dadosBebida ? this.dadosBebida.preco : '', [
+        Validators.required,
+      ]),
     });
   }
 }

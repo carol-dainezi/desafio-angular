@@ -8,6 +8,6 @@
     <p id="highlight">{{ comida.preco | currency : "BRL" }}</p>
     <p>{{ comida.descricao }}</p>
     <button>Editar</button>
-    <button>Excluir</button>
+    <button (click)="excluir(comida._id!)">Excluir</button>
   </div>
 </div>

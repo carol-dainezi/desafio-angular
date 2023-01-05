@@ -10,6 +10,12 @@ import { EventoService } from 'src/app/services/evento.service';
 export class EventosComponent {
   eventos: Evento[] = [];
 
+  async excluir(_id: string) {
+    await this.eventoService.excluirEvento(_id).subscribe();
+
+    window.location.reload();
+  }
+
   constructor(private eventoService: EventoService) {}
 
   ngOnInit() {

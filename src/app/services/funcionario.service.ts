@@ -19,5 +19,11 @@ export class FuncionarioService {
     return this.http.get<Funcionario[]>(this.apiUrl);
   }
 
+  excluirFuncionario(_id: string) {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.delete<Funcionario>(url);
+  }
+
   constructor(private http: HttpClient) {}
 }

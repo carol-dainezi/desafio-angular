@@ -10,6 +10,12 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class UsuariosComponent {
   usuarios: Usuario[] = [];
 
+  async excluir(_id: string) {
+    await this.usuarioService.excluirUsuario(_id).subscribe();
+
+    window.location.reload();
+  }
+
   constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit() {

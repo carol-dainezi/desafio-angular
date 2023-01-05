@@ -10,6 +10,12 @@ import { FornecedorService } from 'src/app/services/fornecedor.service';
 export class FornecedoresComponent {
   fornecedores: Fornecedor[] = [];
 
+  async excluir(_id: string) {
+    await this.fornecedorService.excluirFornecedor(_id).subscribe();
+
+    window.location.reload();
+  }
+
   constructor(private fornecedorService: FornecedorService) {}
 
   ngOnInit() {

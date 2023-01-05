@@ -10,6 +10,12 @@ import { BebidaService } from 'src/app/services/bebida.service';
 export class BebidasComponent {
   bebidas: Bebida[] = [];
 
+  async excluir(_id: string) {
+    await this.bebidaService.excluirBebida(_id).subscribe();
+
+    window.location.reload();
+  }
+
   constructor(private bebidaService: BebidaService) {}
 
   ngOnInit() {

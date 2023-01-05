@@ -12,6 +12,6 @@
     <p>Das {{ evento.horaInicio }} às {{ evento.horaFim }}</p>
     <p>{{ evento.descricao }}</p>
     <button>Editar</button>
-    <button>Excluir</button>
+    <button (click)="excluir(evento._id!)">Excluir</button>
   </div>
 </div>

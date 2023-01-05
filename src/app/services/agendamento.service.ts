@@ -19,5 +19,11 @@ export class AgendamentoService {
     return this.http.get<Agendamento[]>(this.apiUrl);
   }
 
+  excluirAgendamento(_id: string) {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.delete<Agendamento>(url);
+  }
+
   constructor(private http: HttpClient) {}
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Funcionario } from 'src/app/interfaces/Funcionario';
 
@@ -9,6 +9,8 @@ import { Funcionario } from 'src/app/interfaces/Funcionario';
 })
 export class FuncionarioFormComponent {
   @Output() onSubmit = new EventEmitter<Funcionario>();
+
+  @Input() dadosFuncionario: Funcionario | null = null;
 
   funcionarioForm!: FormGroup;
 
@@ -44,13 +46,37 @@ export class FuncionarioFormComponent {
 
   ngOnInit() {
     this.funcionarioForm = new FormGroup({
-      nome: new FormControl('', [Validators.required]),
-      foto: new FormControl('', [Validators.required]),
-      idade: new FormControl('', [Validators.required]),
-      cargo: new FormControl('', [Validators.required]),
-      naturalidade: new FormControl('', [Validators.required]),
-      anoAdmissao: new FormControl('', [Validators.required]),
-      hobbie: new FormControl('', [Validators.required]),
+      _id: new FormControl(
+        this.dadosFuncionario ? this.dadosFuncionario._id : ''
+      ),
+      nome: new FormControl(
+        this.dadosFuncionario ? this.dadosFuncionario.nome : '',
+        [Validators.required]
+      ),
+      foto: new FormControl(
+        this.dadosFuncionario ? this.dadosFuncionario.foto : '',
+        [Validators.required]
+      ),
+      idade: new FormControl(
+        this.dadosFuncionario ? this.dadosFuncionario.idade : '',
+        [Validators.required]
+      ),
+      cargo: new FormControl(
+        this.dadosFuncionario ? this.dadosFuncionario.cargo : '',
+        [Validators.required]
+      ),
+      naturalidade: new FormControl(
+        this.dadosFuncionario ? this.dadosFuncionario.naturalidade : '',
+        [Validators.required]
+      ),
+      anoAdmissao: new FormControl(
+        this.dadosFuncionario ? this.dadosFuncionario.anoAdmissao : '',
+        [Validators.required]
+      ),
+      hobbie: new FormControl(
+        this.dadosFuncionario ? this.dadosFuncionario.hobbie : '',
+        [Validators.required]
+      ),
     });
   }
 }

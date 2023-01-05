@@ -19,5 +19,11 @@ export class FornecedorService {
     return this.http.get<Fornecedor[]>(this.apiUrl);
   }
 
+  excluirFornecedor(_id: string) {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.delete<Fornecedor>(url);
+  }
+
   constructor(private http: HttpClient) {}
 }

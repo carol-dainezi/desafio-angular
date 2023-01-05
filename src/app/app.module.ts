@@ -32,6 +32,7 @@ import { NovoUsuarioComponent } from './pages/novo-usuario/novo-usuario.componen
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { AgendamentoFormComponent } from './components/forms/agendamento-form/agendamento-form.component';
 import { AgendamentosComponent } from './pages/agendamentos/agendamentos.component';
+import { EditarBebidaComponent } from './pages/editar-bebida/editar-bebida.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { AgendamentosComponent } from './pages/agendamentos/agendamentos.compone
     UsuariosComponent,
     AgendamentoFormComponent,
     AgendamentosComponent,
+    EditarBebidaComponent,
   ],
   imports: [
     BrowserModule,

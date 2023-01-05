@@ -20,5 +20,11 @@ export class ComidaService {
     return this.http.get<Comida[]>(this.apiUrl);
   }
 
+  excluirComida(_id: string) {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.delete<Comida>(url);
+  }
+
   constructor(private http: HttpClient) {}
 }

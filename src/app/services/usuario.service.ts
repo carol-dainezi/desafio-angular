@@ -19,5 +19,11 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(this.apiUrl);
   }
 
+  excluirUsuario(_id: string) {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.delete<Usuario>(url);
+  }
+
   constructor(private http: HttpClient) {}
 }

@@ -10,6 +10,12 @@ import { AgendamentoService } from 'src/app/services/agendamento.service';
 export class AgendamentosComponent {
   agendamentos: Agendamento[] = [];
 
+  async excluir(_id: string) {
+    await this.agendamentoService.excluirAgendamento(_id).subscribe();
+
+    window.location.reload();
+  }
+
   constructor(private agendamentoService: AgendamentoService) {}
 
   ngOnInit() {

@@ -19,5 +19,11 @@ export class EventoService {
     return this.http.get<Evento[]>(this.apiUrl);
   }
 
+  excluirEvento(_id: string) {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.delete<Evento>(url);
+  }
+
   constructor(private http: HttpClient) {}
 }

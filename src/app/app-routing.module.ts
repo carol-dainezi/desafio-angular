@@ -17,6 +17,7 @@ import { EventosComponent } from './pages/eventos/eventos.component';
 import { FornecedoresComponent } from './pages/fornecedores/fornecedores.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { AgendamentosComponent } from './pages/agendamentos/agendamentos.component';
+import { EditarBebidaComponent } from './pages/editar-bebida/editar-bebida.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'cardapio/comidas/new', component: NovaComidaComponent },
   { path: 'cardapio/comidas', component: ComidasComponent },
   { path: 'cardapio/bebidas/new', component: NovaBebidaComponent },
+  { path: 'cardapio/bebidas/editar/:_id', component: EditarBebidaComponent },
   { path: 'cardapio/bebidas', component: BebidasComponent },
   { path: 'agendamentos/new', component: NovoAgendamentoComponent },
   { path: 'agendamentos', component: AgendamentosComponent },

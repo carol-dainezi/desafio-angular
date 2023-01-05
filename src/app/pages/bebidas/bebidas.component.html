@@ -9,7 +9,9 @@
       {{ bebida.preco | currency : "BRL" }}
     </p>
     <p>{{ bebida.descricao }}</p>
-    <button>Editar</button>
-    <button>Excluir</button>
+    <a routerLink="/cardapio/bebidas/editar/{{ bebida._id }}"
+      ><button>Editar</button></a
+    >
+    <button (click)="excluir(bebida._id!)">Excluir</button>
   </div>
 </div>

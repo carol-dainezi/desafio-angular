@@ -1,0 +1,4 @@
+<div *ngIf="bebida">
+  <h1>Editando {{ bebida.nome }}</h1>
+  <app-bebida-form (onSubmit)="editar($event)" [dadosBebida]="bebida"></app-bebida-form>
+</div>
