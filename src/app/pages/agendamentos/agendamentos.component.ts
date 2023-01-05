@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Agendamento } from 'src/app/interfaces/Agendamento';
+import { Evento } from 'src/app/interfaces/Evento';
+import { Usuario } from 'src/app/interfaces/Usuario';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
+import { EventoService } from 'src/app/services/evento.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-agendamentos',
@@ -8,7 +12,17 @@ import { AgendamentoService } from 'src/app/services/agendamento.service';
   styleUrls: ['..//../listas.component.css', './agendamentos.component.css'],
 })
 export class AgendamentosComponent {
-  agendamentos: Agendamento[] = [];
+  @Input() idUsuario?: string;
+  usuario?: Usuario;
+
+  @Input() idEvento?: string;
+  evento?: Evento;
+
+  for: string = 'let agendamentos of todosOsAgendamentos';
+
+  todosOsAgendamentos: Agendamento[] = [];
+  agendamentosPorUsuario: Agendamento[] = [];
+  agendamentosPorEvento: Agendamento[] = [];
 
   async excluir(_id: string) {
     await this.agendamentoService.excluirAgendamento(_id).subscribe();
@@ -16,11 +30,39 @@ export class AgendamentosComponent {
     window.location.reload();
   }
 
-  constructor(private agendamentoService: AgendamentoService) {}
+  constructor(
+    private agendamentoService: AgendamentoService,
+    private usuarioService: UsuarioService,
+    private eventoService: EventoService
+  ) {}
 
   ngOnInit() {
     this.agendamentoService.listarAgendamentos().subscribe((items) => {
-      this.agendamentos = items;
+      this.todosOsAgendamentos = items;
     });
+
+    if (this.idUsuario) {
+      this.agendamentoService
+        .listarAgendamentosPorUsuario(this.idUsuario)
+        .subscribe((items) => {
+          this.agendamentosPorUsuario = items;
+        });
+
+      this.usuarioService.buscarUsuario(this.idUsuario).subscribe((item) => {
+        this.usuario = item;
+      });
+    }
+
+    if (this.idEvento) {
+      this.agendamentoService
+        .listarAgendamentosPorEvento(this.idEvento)
+        .subscribe((items) => {
+          this.agendamentosPorEvento = items;
+        });
+
+      this.eventoService.buscarEvento(this.idEvento).subscribe((item) => {
+        this.evento = item;
+      });
+    }
   }
 }

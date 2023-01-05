@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/interfaces/Usuario';
 
@@ -9,6 +9,10 @@ import { Usuario } from 'src/app/interfaces/Usuario';
 })
 export class CadastroComponent {
   @Output() onSubmit = new EventEmitter<Usuario>();
+
+  @Input() dadosUsuario: Usuario | null = null;
+
+  @Input() textoBotao!: string;
 
   usuarioForm!: FormGroup;
 
@@ -45,11 +49,23 @@ export class CadastroComponent {
 
   ngOnInit() {
     this.usuarioForm = new FormGroup({
-      nome: new FormControl('', [Validators.required]),
-      cpf: new FormControl('', [Validators.required]),
-      telefone: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
-      senha: new FormControl('', [Validators.required]),
+      _id: new FormControl(this.dadosUsuario ? this.dadosUsuario._id : null),
+      nome: new FormControl(this.dadosUsuario ? this.dadosUsuario.nome : '', [
+        Validators.required,
+      ]),
+      cpf: new FormControl(this.dadosUsuario ? this.dadosUsuario.cpf : '', [
+        Validators.required,
+      ]),
+      telefone: new FormControl(
+        this.dadosUsuario ? this.dadosUsuario.telefone : '',
+        [Validators.required]
+      ),
+      email: new FormControl(this.dadosUsuario ? this.dadosUsuario.email : '', [
+        Validators.required,
+      ]),
+      senha: new FormControl(this.dadosUsuario ? this.dadosUsuario.senha : '', [
+        Validators.required,
+      ]),
     });
   }
 }

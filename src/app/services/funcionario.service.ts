@@ -19,11 +19,25 @@ export class FuncionarioService {
     return this.http.get<Funcionario[]>(this.apiUrl);
   }
 
+  buscarFuncionario(_id: string): Observable<Funcionario> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.get<Funcionario>(url);
+  }
+
   excluirFuncionario(_id: string) {
     const url = `${this.apiUrl}/${_id}`;
 
     return this.http.delete<Funcionario>(url);
   }
 
+  editarFuncionario(
+    _id: string,
+    funcionario: Funcionario
+  ): Observable<Funcionario> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.put<Funcionario>(url, funcionario);
+  }
   constructor(private http: HttpClient) {}
 }

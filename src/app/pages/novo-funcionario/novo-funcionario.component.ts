@@ -8,6 +8,8 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
   styleUrls: ['./novo-funcionario.component.css'],
 })
 export class NovoFuncionarioComponent {
+  textoBotao: string = 'Cadastrar Funcionário';
+
   enviar(funcionario: Funcionario) {
     this.funcionarioService.salvarFuncionario(funcionario).subscribe();
   }

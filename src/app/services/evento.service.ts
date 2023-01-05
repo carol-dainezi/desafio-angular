@@ -19,10 +19,22 @@ export class EventoService {
     return this.http.get<Evento[]>(this.apiUrl);
   }
 
+  buscarEvento(_id: string): Observable<Evento> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.get<Evento>(url);
+  }
+
   excluirEvento(_id: string) {
     const url = `${this.apiUrl}/${_id}`;
 
     return this.http.delete<Evento>(url);
+  }
+
+  editarEvento(_id: string, evento: Evento): Observable<Evento> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.put<Evento>(url, evento);
   }
 
   constructor(private http: HttpClient) {}

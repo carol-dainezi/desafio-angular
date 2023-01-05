@@ -20,7 +20,6 @@ export class FuncionariosComponent {
 
   ngOnInit() {
     this.funcionarioService.listarFuncionarios().subscribe((items) => {
-      console.log(items);
       this.funcionarios = items;
     });
   }

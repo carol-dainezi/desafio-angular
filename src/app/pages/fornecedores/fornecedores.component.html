@@ -6,7 +6,9 @@
       <img src="{{ fornecedor.foto }}" />
     </div>
     <p>{{ fornecedor.descricao }}</p>
-    <button>Editar</button>
+    <a routerLink="/fornecedores/editar/{{ fornecedor._id }}"
+      ><button>Editar</button></a
+    >
     <button (click)="excluir(fornecedor._id!)">Excluir</button>
   </div>
 </div>

@@ -1,2 +1,5 @@
 <h1>Novo Evento</h1>
-<app-evento-form (onSubmit)="enviar($event)"></app-evento-form>
+<app-evento-form
+  (onSubmit)="enviar($event)"
+  [textoBotao]="textoBotao"
+></app-evento-form>

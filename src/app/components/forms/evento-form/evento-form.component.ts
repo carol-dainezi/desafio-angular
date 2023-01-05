@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Evento } from 'src/app/interfaces/Evento';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -9,6 +9,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class EventoFormComponent {
   @Output() onSubmit = new EventEmitter<Evento>();
+
+  @Input() dadosEvento: Evento | null = null;
+
+  @Input() textoBotao!: string;
 
   eventoForm!: FormGroup;
 
@@ -59,14 +63,33 @@ export class EventoFormComponent {
 
   ngOnInit() {
     this.eventoForm = new FormGroup({
-      id: new FormControl(''),
-      nome: new FormControl('', [Validators.required]),
-      foto: new FormControl('', [Validators.required]),
-      descricao: new FormControl('', [Validators.required]),
-      dataInicio: new FormControl('', [Validators.required]),
-      dataFim: new FormControl('', [Validators.required]),
-      horaInicio: new FormControl('', [Validators.required]),
-      horaFim: new FormControl('', [Validators.required]),
+      _id: new FormControl(this.dadosEvento ? this.dadosEvento._id : null),
+      nome: new FormControl(this.dadosEvento ? this.dadosEvento.nome : '', [
+        Validators.required,
+      ]),
+      foto: new FormControl(this.dadosEvento ? this.dadosEvento.foto : '', [
+        Validators.required,
+      ]),
+      descricao: new FormControl(
+        this.dadosEvento ? this.dadosEvento.descricao : '',
+        [Validators.required]
+      ),
+      dataInicio: new FormControl(
+        this.dadosEvento ? this.dadosEvento.dataInicio : '',
+        [Validators.required]
+      ),
+      dataFim: new FormControl(
+        this.dadosEvento ? this.dadosEvento.dataFim : '',
+        [Validators.required]
+      ),
+      horaInicio: new FormControl(
+        this.dadosEvento ? this.dadosEvento.horaInicio : '',
+        [Validators.required]
+      ),
+      horaFim: new FormControl(
+        this.dadosEvento ? this.dadosEvento.horaFim : '',
+        [Validators.required]
+      ),
     });
   }
 }

@@ -5,7 +5,7 @@ import { EventoService } from 'src/app/services/evento.service';
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
-  styleUrls: ['../../listas.component.css'],
+  styleUrls: ['../../listas.component.css', './eventos.component.css'],
 })
 export class EventosComponent {
   eventos: Evento[] = [];

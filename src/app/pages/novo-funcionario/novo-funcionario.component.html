@@ -1,2 +1,5 @@
 <h1>Novo Funcionário</h1>
-<app-funcionario-form (onSubmit)="enviar($event)"></app-funcionario-form>
+<app-funcionario-form
+  (onSubmit)="enviar($event)"
+  [textoBotao]="textoBotao"
+></app-funcionario-form>

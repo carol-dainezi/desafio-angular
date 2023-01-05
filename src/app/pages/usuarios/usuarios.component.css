@@ -1,7 +1,11 @@
 .card {
-  height: 15rem;
+  height: fit-content;
 }
 
 #highlight {
   font-size: 18px;
+}
+
+.card button {
+  margin-bottom: 1rem;
 }

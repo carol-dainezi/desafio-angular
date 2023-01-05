@@ -1,4 +1,5 @@
 import { Component, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/Usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -8,9 +9,13 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./novo-usuario.component.css'],
 })
 export class NovoUsuarioComponent {
-  enviar(usuario: Usuario) {
-    this.usuarioService.salvarUsuario(usuario).subscribe();
+  textoBotao: string = 'Cadastrar-se';
+
+  async enviar(usuario: Usuario) {
+    await this.usuarioService.salvarUsuario(usuario).subscribe();
+
+    this.router.navigate(['/']);
   }
 
-  constructor(private usuarioService: UsuarioService) {}
+  constructor(private usuarioService: UsuarioService, private router: Router) {}
 }

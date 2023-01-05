@@ -8,6 +8,8 @@ import { FornecedorService } from 'src/app/services/fornecedor.service';
   styleUrls: ['./novo-fornecedor.component.css'],
 })
 export class NovoFornecedorComponent {
+  textoBotao: string = 'Cadastrar Fornecedor';
+
   enviar(fornecedor: Fornecedor) {
     this.fornecedorService.salvarFornecedor(fornecedor).subscribe();
   }

@@ -19,10 +19,25 @@ export class FornecedorService {
     return this.http.get<Fornecedor[]>(this.apiUrl);
   }
 
+  buscarFornecedor(_id: string): Observable<Fornecedor> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.get<Fornecedor>(url);
+  }
+
   excluirFornecedor(_id: string) {
     const url = `${this.apiUrl}/${_id}`;
 
     return this.http.delete<Fornecedor>(url);
+  }
+
+  editarFornecedor(
+    _id: string,
+    fornecedor: Fornecedor
+  ): Observable<Fornecedor> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.put<Fornecedor>(url, fornecedor);
   }
 
   constructor(private http: HttpClient) {}

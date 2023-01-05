@@ -4,6 +4,6 @@ export interface Agendamento {
   nomeUsuario?: string;
   idEvento: string;
   nomeEvento?: string;
-  data: Date;
+  data: string;
   hora: string;
 }

@@ -3,8 +3,8 @@ export interface Evento {
   nome: string;
   foto: string;
   descricao: string;
-  dataInicio: Date;
-  dataFim: Date;
+  dataInicio: string;
+  dataFim: string;
   horaInicio: string;
   horaFim: string;
 }

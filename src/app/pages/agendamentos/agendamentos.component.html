@@ -1,11 +1,47 @@
-<h1>Agendamentos</h1>
-<div class="cards">
-  <div class="card" *ngFor="let agendamento of agendamentos">
-    <p id="highlight">Usuário: {{ agendamento.nomeUsuario }}</p>
-    <p id="highlight">Evento: {{ agendamento.nomeEvento }}</p>
-    <p>Data: {{ agendamento.data | date : "dd/MM/yyyy" }}</p>
-    <p>Hora: {{ agendamento.hora }}</p>
-    <button>Editar</button>
-    <button (click)="excluir(agendamento._id!)">Excluir</button>
+<div *ngIf="!usuario && !evento">
+  <h1>Agendamentos</h1>
+  <div class="cards">
+    <div class="card" *ngFor="let agendamento of todosOsAgendamentos">
+      <p id="highlight">Usuário: {{ agendamento.nomeUsuario }}</p>
+      <p id="highlight">Evento: {{ agendamento.nomeEvento }}</p>
+      <p>Data: {{ agendamento.data | date : "dd/MM/yyyy" }}</p>
+      <p>Hora: {{ agendamento.hora }}</p>
+      <a routerLink="/agendamentos/editar/{{ agendamento._id }}"
+        ><button>Editar</button></a
+      >
+      <button (click)="excluir(agendamento._id!)">Excluir</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="usuario">
+  <h1>Agendamentos de {{ usuario.nome }}</h1>
+  <div class="cards">
+    <div class="card" *ngFor="let agendamento of agendamentosPorUsuario">
+      <p id="highlight">Usuário: {{ agendamento.nomeUsuario }}</p>
+      <p id="highlight">Evento: {{ agendamento.nomeEvento }}</p>
+      <p>Data: {{ agendamento.data | date : "dd/MM/yyyy" }}</p>
+      <p>Hora: {{ agendamento.hora }}</p>
+      <a routerLink="/agendamentos/editar/{{ agendamento._id }}"
+        ><button>Editar</button></a
+      >
+      <button (click)="excluir(agendamento._id!)">Excluir</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="evento">
+  <h1>Agendamentos de {{ evento.nome }}</h1>
+  <div class="cards">
+    <div class="card" *ngFor="let agendamento of agendamentosPorEvento">
+      <p id="highlight">Usuário: {{ agendamento.nomeUsuario }}</p>
+      <p id="highlight">Evento: {{ agendamento.nomeEvento }}</p>
+      <p>Data: {{ agendamento.data | date : "dd/MM/yyyy" }}</p>
+      <p>Hora: {{ agendamento.hora }}</p>
+      <a routerLink="/agendamentos/editar/{{ agendamento._id }}"
+        ><button>Editar</button></a
+      >
+      <button (click)="excluir(agendamento._id!)">Excluir</button>
+    </div>
   </div>
 </div>

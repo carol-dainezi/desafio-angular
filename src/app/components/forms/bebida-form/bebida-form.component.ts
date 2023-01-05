@@ -13,6 +13,8 @@ export class BebidaFormComponent {
 
   @Input() dadosBebida: Bebida | null = null;
 
+  @Input() textoBotao!: string;
+
   bebidaForm!: FormGroup;
 
   submit() {
@@ -41,7 +43,7 @@ export class BebidaFormComponent {
 
   ngOnInit(): void {
     this.bebidaForm = new FormGroup({
-      _id: new FormControl(this.dadosBebida ? this.dadosBebida._id : ''),
+      _id: new FormControl(this.dadosBebida ? this.dadosBebida._id : null),
       nome: new FormControl(this.dadosBebida ? this.dadosBebida.nome : '', [
         Validators.required,
       ]),

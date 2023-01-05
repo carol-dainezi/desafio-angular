@@ -5,4 +5,5 @@ export interface Usuario {
   telefone: string;
   email: string;
   senha: string;
+  isAdmin: boolean;
 }

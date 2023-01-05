@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/interfaces/Usuario';
+import { AgendamentoService } from 'src/app/services/agendamento.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -12,6 +13,12 @@ export class UsuariosComponent {
 
   async excluir(_id: string) {
     await this.usuarioService.excluirUsuario(_id).subscribe();
+
+    window.location.reload();
+  }
+
+  async mudarPermissao(usuario: Usuario) {
+    await this.usuarioService.mudarPermissoes(usuario).subscribe();
 
     window.location.reload();
   }

@@ -5,7 +5,14 @@
     <p id="highlight">CPF: {{ usuario.cpf }}</p>
     <p>Telefone: {{ usuario.telefone }}</p>
     <p>Email: {{ usuario.email }}</p>
-    <button>Editar</button>
+    <p>Administrador: {{ usuario.isAdmin ? "Sim" : "Não" }}</p>
+    <a routerLink="/usuarios/editar/{{ usuario._id }}"
+      ><button>Editar</button></a
+    >
     <button (click)="excluir(usuario._id!)">Excluir</button>
+    <button (click)="mudarPermissao(usuario)">Mudar Permissões</button>
+    <a routerLink="/agendamentos/usuario/{{ usuario._id }}"
+      ><button>Ver Agendamentos</button></a
+    >
   </div>
 </div>

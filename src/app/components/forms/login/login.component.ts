@@ -15,16 +15,15 @@ export class LoginComponent {
 
   visibilidade: boolean = false;
 
-  enviar() {
+  async enviar() {
+    console.log();
     if (this.loginForm.invalid) {
       return;
     }
 
     this.login = this.loginForm.value;
 
-    console.log(this.login);
-
-    this.loginService.fazerLogin(this.login).subscribe();
+    await this.loginService.fazerLogin(this.login).subscribe();
 
     this.router.navigate(['/']);
   }

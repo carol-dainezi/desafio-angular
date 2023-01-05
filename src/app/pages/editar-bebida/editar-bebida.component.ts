@@ -9,6 +9,8 @@ import { BebidaService } from 'src/app/services/bebida.service';
   styleUrls: ['./editar-bebida.component.css'],
 })
 export class EditarBebidaComponent {
+  textoBotao: string = 'Editar Bebida';
+
   bebida!: Bebida;
 
   editar(bebida: Bebida) {

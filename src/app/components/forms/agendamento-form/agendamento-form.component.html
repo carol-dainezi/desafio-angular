@@ -1,5 +1,6 @@
 <div class="form-card">
   <form (ngSubmit)="submit()" [formGroup]="agendamentoForm" #formDir="ngForm">
+    <input type="hidden" formControlName="_id" />
     <div class="form-group">
       <label for="usuario">Usuário:</label>
       <select id="usuario" formControlName="idUsuario">
@@ -41,7 +42,7 @@
       <p *ngIf="hora.errors?.['required']">Preencha a hora do agendamento.</p>
     </div>
     <div class="button">
-      <button type="submit">Agendar</button>
+      <button type="submit">{{ textoBotao }}</button>
     </div>
   </form>
 </div>

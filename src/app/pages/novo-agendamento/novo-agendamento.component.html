@@ -1,2 +1,5 @@
 <h1>Novo Agendamento</h1>
-<app-agendamento-form (onSubmit)="enviar($event)"></app-agendamento-form>
+<app-agendamento-form
+  (onSubmit)="enviar($event)"
+  [textoBotao]="textoBotao"
+></app-agendamento-form>

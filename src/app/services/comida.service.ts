@@ -20,10 +20,22 @@ export class ComidaService {
     return this.http.get<Comida[]>(this.apiUrl);
   }
 
+  buscarComida(_id: string): Observable<Comida> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.get<Comida>(url);
+  }
+
   excluirComida(_id: string) {
     const url = `${this.apiUrl}/${_id}`;
 
     return this.http.delete<Comida>(url);
+  }
+
+  editarBebida(_id: string, comida: Comida): Observable<Comida> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.put<Comida>(url, comida);
   }
 
   constructor(private http: HttpClient) {}

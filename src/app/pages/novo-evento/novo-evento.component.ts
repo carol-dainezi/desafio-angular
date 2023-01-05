@@ -8,6 +8,8 @@ import { EventoService } from 'src/app/services/evento.service';
   styleUrls: ['./novo-evento.component.css'],
 })
 export class NovoEventoComponent {
+  textoBotao: string = 'Cadastrar Evento';
+
   enviar(evento: Evento) {
     this.eventoService.salvarEvento(evento).subscribe();
   }

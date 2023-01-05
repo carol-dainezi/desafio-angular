@@ -33,6 +33,14 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { AgendamentoFormComponent } from './components/forms/agendamento-form/agendamento-form.component';
 import { AgendamentosComponent } from './pages/agendamentos/agendamentos.component';
 import { EditarBebidaComponent } from './pages/editar-bebida/editar-bebida.component';
+import { EditarFuncionarioComponent } from './pages/editar-funcionario/editar-funcionario.component';
+import { EditarComidaComponent } from './pages/editar-comida/editar-comida.component';
+import { EditarFornecedorComponent } from './pages/editar-fornecedor/editar-fornecedor.component';
+import { EditarEventoComponent } from './pages/editar-evento/editar-evento.component';
+import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
+import { EditarAgendamentoComponent } from './pages/editar-agendamento/editar-agendamento.component';
+import { AgendamentosUsuarioComponent } from './pages/agendamentos-usuario/agendamentos-usuario.component';
+import { AgendamentosEventoComponent } from './pages/agendamentos-evento/agendamentos-evento.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +72,14 @@ import { EditarBebidaComponent } from './pages/editar-bebida/editar-bebida.compo
     AgendamentoFormComponent,
     AgendamentosComponent,
     EditarBebidaComponent,
+    EditarFuncionarioComponent,
+    EditarComidaComponent,
+    EditarFornecedorComponent,
+    EditarEventoComponent,
+    EditarUsuarioComponent,
+    EditarAgendamentoComponent,
+    AgendamentosUsuarioComponent,
+    AgendamentosEventoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Agendamento } from 'src/app/interfaces/Agendamento';
 import { Evento } from 'src/app/interfaces/Evento';
@@ -13,6 +13,11 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class AgendamentoFormComponent {
   @Output() onSubmit = new EventEmitter<Agendamento>();
+
+  @Input() dadosAgendamento: Agendamento | null = null;
+
+  @Input() textoBotao!: string;
+
   agendamentoForm!: FormGroup;
 
   usuarios: Usuario[] = [];
@@ -60,10 +65,25 @@ export class AgendamentoFormComponent {
 
   ngOnInit() {
     this.agendamentoForm = new FormGroup({
-      idUsuario: new FormControl('', [Validators.required]),
-      idEvento: new FormControl('', [Validators.required]),
-      data: new FormControl('', [Validators.required]),
-      hora: new FormControl('', [Validators.required]),
+      _id: new FormControl(
+        this.dadosAgendamento ? this.dadosAgendamento._id : null
+      ),
+      idUsuario: new FormControl(
+        this.dadosAgendamento ? this.dadosAgendamento.idUsuario : '',
+        [Validators.required]
+      ),
+      idEvento: new FormControl(
+        this.dadosAgendamento ? this.dadosAgendamento.idEvento : '',
+        [Validators.required]
+      ),
+      data: new FormControl(
+        this.dadosAgendamento ? this.dadosAgendamento.data : '',
+        [Validators.required]
+      ),
+      hora: new FormControl(
+        this.dadosAgendamento ? this.dadosAgendamento.hora : '',
+        [Validators.required]
+      ),
     });
 
     this.usuarioService.listarUsuarios().subscribe((users) => {

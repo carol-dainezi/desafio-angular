@@ -8,6 +8,8 @@ import { AgendamentoService } from 'src/app/services/agendamento.service';
   styleUrls: ['./novo-agendamento.component.css'],
 })
 export class NovoAgendamentoComponent {
+  textoBotao: string = 'Agendar';
+
   enviar(agendamento: Agendamento) {
     this.agendamentoService.salvarAgendamento(agendamento).subscribe();
   }

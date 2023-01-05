@@ -1,0 +1,11 @@
+.card {
+  height: 45rem;
+}
+
+#highlight {
+  font-size: 18px;
+}
+
+.card button {
+  margin-bottom: 1rem;
+}

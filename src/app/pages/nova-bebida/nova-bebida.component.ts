@@ -8,6 +8,8 @@ import { BebidaService } from 'src/app/services/bebida.service';
   styleUrls: ['./nova-bebida.component.css'],
 })
 export class NovaBebidaComponent {
+  textoBotao: string = 'Cadastrar Bebida';
+
   enviar(bebida: Bebida) {
     this.bebidaService.salvarBebida(bebida).subscribe();
   }

@@ -10,7 +10,9 @@
     <p>Naturalidade: {{ funcionario.naturalidade }}</p>
     <p>Admitido em {{ funcionario.anoAdmissao }}</p>
     <p>Hobbie: {{ funcionario.hobbie }}</p>
-    <button>Editar</button>
+    <a routerLink="/funcionarios/editar/{{ funcionario._id }}"
+      ><button>Editar</button></a
+    >
     <button (click)="excluir(funcionario._id!)">Excluir</button>
   </div>
 </div>

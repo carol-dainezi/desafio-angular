@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Fornecedor } from 'src/app/interfaces/Fornecedor';
 
@@ -9,6 +9,10 @@ import { Fornecedor } from 'src/app/interfaces/Fornecedor';
 })
 export class FornecedorFormComponent {
   @Output() onSubmit = new EventEmitter<Fornecedor>();
+
+  @Input() dadosFornecedor: Fornecedor | null = null;
+
+  @Input() textoBotao!: string;
 
   fornecedorForm!: FormGroup;
 
@@ -32,9 +36,21 @@ export class FornecedorFormComponent {
 
   ngOnInit() {
     this.fornecedorForm = new FormGroup({
-      nome: new FormControl('', [Validators.required]),
-      foto: new FormControl('', [Validators.required]),
-      descricao: new FormControl('', [Validators.required]),
+      _id: new FormControl(
+        this.dadosFornecedor ? this.dadosFornecedor._id : null
+      ),
+      nome: new FormControl(
+        this.dadosFornecedor ? this.dadosFornecedor.nome : '',
+        [Validators.required]
+      ),
+      foto: new FormControl(
+        this.dadosFornecedor ? this.dadosFornecedor.foto : '',
+        [Validators.required]
+      ),
+      descricao: new FormControl(
+        this.dadosFornecedor ? this.dadosFornecedor.descricao : '',
+        [Validators.required]
+      ),
     });
   }
 }

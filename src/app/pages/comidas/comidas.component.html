@@ -7,7 +7,9 @@
     </div>
     <p id="highlight">{{ comida.preco | currency : "BRL" }}</p>
     <p>{{ comida.descricao }}</p>
-    <button>Editar</button>
+    <a routerLink="/cardapio/comidas/editar/{{ comida._id }}"
+      ><button>Editar</button></a
+    >
     <button (click)="excluir(comida._id!)">Excluir</button>
   </div>
 </div>

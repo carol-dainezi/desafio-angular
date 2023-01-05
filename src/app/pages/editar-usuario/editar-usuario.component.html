@@ -1,0 +1,8 @@
+<div *ngIf="usuario">
+  <h1>Editando {{ usuario.nome }}</h1>
+  <app-cadastro
+    (onSubmit)="editar($event)"
+    [dadosUsuario]="usuario"
+    [textoBotao]="textoBotao"
+  ></app-cadastro>
+</div>

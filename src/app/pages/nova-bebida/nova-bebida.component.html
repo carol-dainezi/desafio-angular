@@ -1,2 +1,5 @@
 <h1>Nova Bebida</h1>
-<app-bebida-form (onSubmit)="enviar($event)"></app-bebida-form>
+<app-bebida-form
+  (onSubmit)="enviar($event)"
+  [textoBotao]="textoBotao"
+></app-bebida-form>

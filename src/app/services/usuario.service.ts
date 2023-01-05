@@ -19,10 +19,32 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(this.apiUrl);
   }
 
+  buscarUsuario(_id: string): Observable<Usuario> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.get<Usuario>(url);
+  }
+
   excluirUsuario(_id: string) {
     const url = `${this.apiUrl}/${_id}`;
 
     return this.http.delete<Usuario>(url);
+  }
+
+  editarUsuario(_id: string, usuario: Usuario): Observable<Usuario> {
+    const url = `${this.apiUrl}/${_id}`;
+
+    return this.http.put<Usuario>(url, usuario);
+  }
+
+  mudarPermissoes(usuario: Usuario): Observable<Usuario> {
+    const url = `${this.apiUrl}/isadmin/${usuario._id}`;
+
+    const isAdmin = {
+      isAdmin: !usuario.isAdmin,
+    };
+
+    return this.http.put<Usuario>(url, isAdmin);
   }
 
   constructor(private http: HttpClient) {}

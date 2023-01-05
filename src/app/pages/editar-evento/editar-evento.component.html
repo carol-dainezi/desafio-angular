@@ -1,0 +1,6 @@
+<h1>Editando {{ evento.nome }}</h1>
+<app-evento-form
+  (onSubmit)="editar($event)"
+  [dadosEvento]="evento"
+  [textoBotao]="textoBotao"
+></app-evento-form>

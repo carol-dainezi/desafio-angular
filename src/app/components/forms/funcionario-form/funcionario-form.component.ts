@@ -12,6 +12,8 @@ export class FuncionarioFormComponent {
 
   @Input() dadosFuncionario: Funcionario | null = null;
 
+  @Input() textoBotao!: string;
+
   funcionarioForm!: FormGroup;
 
   get nome() {
@@ -47,7 +49,7 @@ export class FuncionarioFormComponent {
   ngOnInit() {
     this.funcionarioForm = new FormGroup({
       _id: new FormControl(
-        this.dadosFuncionario ? this.dadosFuncionario._id : ''
+        this.dadosFuncionario ? this.dadosFuncionario._id : null
       ),
       nome: new FormControl(
         this.dadosFuncionario ? this.dadosFuncionario.nome : '',

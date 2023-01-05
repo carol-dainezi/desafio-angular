@@ -1,0 +1,6 @@
+<h1>Editando {{ fornecedor.nome }}</h1>
+<app-fornecedor-form
+  (onSubmit)="editar($event)"
+  [dadosFornecedor]="fornecedor"
+  [textoBotao]="textoBotao"
+></app-fornecedor-form>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Comida } from 'src/app/interfaces/Comida';
@@ -10,6 +10,10 @@ import { Comida } from 'src/app/interfaces/Comida';
 })
 export class ComidaFormComponent {
   @Output() onSubmit = new EventEmitter<Comida>();
+
+  @Input() dadosComida: Comida | null = null;
+
+  @Input() textoBotao!: string;
 
   comidaForm!: FormGroup;
 
@@ -39,10 +43,20 @@ export class ComidaFormComponent {
 
   ngOnInit(): void {
     this.comidaForm = new FormGroup({
-      nome: new FormControl('', [Validators.required]),
-      foto: new FormControl('', [Validators.required]),
-      descricao: new FormControl('', [Validators.required]),
-      preco: new FormControl('', [Validators.required]),
+      _id: new FormControl(this.dadosComida ? this.dadosComida._id : null),
+      nome: new FormControl(this.dadosComida ? this.dadosComida.nome : '', [
+        Validators.required,
+      ]),
+      foto: new FormControl(this.dadosComida ? this.dadosComida.foto : '', [
+        Validators.required,
+      ]),
+      descricao: new FormControl(
+        this.dadosComida ? this.dadosComida.descricao : '',
+        [Validators.required]
+      ),
+      preco: new FormControl(this.dadosComida ? this.dadosComida.preco : '', [
+        Validators.required,
+      ]),
     });
   }
 }
